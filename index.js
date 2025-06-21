@@ -51,7 +51,8 @@ app.post('/', (req, res) => {
     const adresseDepart = formatAdresse(rawDepart);
     const adresseArrivee = formatAdresse(rawArrivee);
     const date = new Date().toLocaleDateString('fr-FR');
-    const googleApiKey = 'AIzaSyCPkVYCamKtA9Avo7QRwR8mGYLpPc6NKyA'; // ✅ ta clé API Google
+    const googleApiKey = process.env.GOOGLE_API_KEY;
+    // ✅ ta clé API Google
 
     if (intent === 'Calcul_Tarif') {
         console.log('📌 Intent : Calcul_Tarif');
